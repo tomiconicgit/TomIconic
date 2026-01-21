@@ -297,3 +297,153 @@ body {
     padding-left: 80px;
   }
 }
+
+/* =========================
+   EVENT VIEW OVERLAY
+========================= */
+
+.event-view {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-view.hidden {
+  display: none;
+}
+
+.event-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(30px);
+}
+
+.event-panel {
+  position: relative;
+  width: min(920px, 92vw);
+  max-height: 90vh;
+  background: rgba(18, 18, 22, 0.85);
+  backdrop-filter: blur(30px);
+  border-radius: 28px;
+  padding: 40px;
+  overflow-y: auto;
+  animation: slideUp 0.35s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.event-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.event-header {
+  margin-bottom: 32px;
+}
+
+.event-tag {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.event-header h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 12px 0;
+}
+
+.event-summary {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* =========================
+   EVENT STATS GRID
+========================= */
+
+.event-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat-value {
+  font-size: 32px;
+  margin-top: 6px;
+}
+
+.stat-value.negative {
+  color: #ff6b6b;
+}
+
+/* =========================
+   EVENT ACTIONS
+========================= */
+
+.event-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.event-actions button {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.event-actions .primary {
+  background: white;
+  color: black;
+}
+
+.event-actions .secondary {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* =========================
+   EVENT META
+========================= */
+
+.event-meta {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  gap: 18px;
+}
