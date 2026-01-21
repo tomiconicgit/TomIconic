@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Public Ledger</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="logo">PUBLIC LEDGER</div>
+
+    <nav class="nav-links">
+      <button data-page="dashboard" class="active">Dashboard</button>
+      <button data-page="stats">Statistics</button>
+      <button data-page="articles">Articles</button>
+    </nav>
+  </header>
+
+  <!-- Main App Container -->
+  <main id="app">
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page active">
+      <h1 class="page-title">Current State</h1>
+
+      <div class="card-row" id="live-cards">
+        <!-- injected via JS -->
+      </div>
+
+      <h2 class="section-title">Trending Proof</h2>
+      <div class="card-grid" id="trending-cards">
+        <!-- injected via JS -->
+      </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section id="stats" class="page">
+      <h1 class="page-title">Statistics</h1>
+
+      <div class="stats-grid" id="stats-grid">
+        <!-- injected via JS -->
+      </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section id="articles" class="page">
+      <h1 class="page-title">Articles</h1>
+      <p class="muted">
+        Articles provide depth and sourcing. Statistics are the primary record.
+      </p>
+    </section>
+
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
