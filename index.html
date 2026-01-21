@@ -2,45 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TOM</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- System font for Apple-like feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Meta for social preview later -->
+  <meta name="description" content="Live facts, stats, and accountability. Built by Tom Iconic.">
 </head>
 
 <body>
 
-  <!-- LEFT RAIL (DESKTOP) -->
-  <aside class="side-rail">
-    <img src="assets/tom-logo.svg" class="logo" />
+  <!-- SIDE NAV (DESKTOP) -->
+  <aside class="side-nav">
+    <div class="brand">
+      <!-- TOM ICONIC LOGO -->
+      <img src="assets/tom-logo.svg" alt="TOM" />
+    </div>
 
-    <nav>
+    <nav class="nav-items">
       <button class="active" data-page="home">Home</button>
-      <button data-page="stats">Statistics</button>
+      <button data-page="statistics">Statistics</button>
       <button data-page="articles">Articles</button>
     </nav>
   </aside>
 
-  <!-- MAIN CONTENT -->
-  <main id="app">
+  <!-- MAIN APP -->
+  <main class="app">
 
-    <!-- HOME -->
-    <section id="home" class="page active">
+    <!-- HERO / FEATURED EVENT -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
 
-      <!-- HERO -->
-      <div class="hero">
-        <div class="hero-content">
-          <span class="hero-label">LIVE</span>
-          <h1 id="hero-title">UK Government Silence</h1>
-          <p id="hero-sub">214 days without a statement</p>
+      <div class="hero-content">
+        <span class="hero-tag">LIVE · UK POLITICS</span>
+
+        <h1 class="hero-title">
+          “We will stop the boats”
+        </h1>
+
+        <p class="hero-subtitle">
+          Small boat crossings since statement: <strong>+3,421</strong>
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary">View Live Stats</button>
+          <button class="secondary">See Breakdown</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT RAILS -->
+    <section class="rails">
+
+      <!-- RAIL: CURRENT STATE -->
+      <div class="rail-block">
+        <h2 class="rail-title">Current State</h2>
+
+        <div class="rail" id="current-state-rail">
+          <!-- Example card -->
+          <article class="content-card">
+            <span class="card-tag">TRACKER</span>
+            <h3>UK Government Silence</h3>
+            <p class="card-value">214 days</p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-tag">LIVE</span>
+            <h3>Small Boat Crossings (2026)</h3>
+            <p class="card-value">18,902</p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-tag">COMPARISON</span>
+            <h3>UK vs EU Border Policy</h3>
+            <p class="card-value">View</p>
+          </article>
         </div>
       </div>
 
-      <!-- ROWS -->
-      <div class="row">
-        <h2>Current State</h2>
-        <div class="rail" id="live-rail"></div>
+      <!-- RAIL: LATEST STATEMENTS -->
+      <div class="rail-block">
+        <h2 class="rail-title">Latest Statements</h2>
+
+        <div class="rail" id="statements-rail">
+          <article class="content-card image-card">
+            <img src="assets/starmer.jpg" alt="Keir Starmer">
+            <div class="card-overlay">
+              <span class="card-tag">STATEMENT</span>
+              <h3>Keir Starmer on Borders</h3>
+            </div>
+          </article>
+
+          <article class="content-card image-card">
+            <img src="assets/biden.jpg" alt="Joe Biden">
+            <div class="card-overlay">
+              <span class="card-tag">US POLICY</span>
+              <h3>US Response Update</h3>
+            </div>
+          </article>
+        </div>
       </div>
 
-      <div class="row">
-        <h2>Trending Proof</h2>
-        <div class=
+      <!-- RAIL: ARGUMENTS & PROOF -->
+      <div class="rail-block">
+        <h2 class="rail-title">Arguments & Proof</h2>
+
+        <div class="rail" id="proof-rail">
+          <article class="content-card">
+            <span class="card-tag">FACT</span>
+            <h3>Promises vs Outcomes</h3>
+            <p class="card-sub">Since 2019</p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-tag">TIMELINE</span>
+            <h3>Border Policy Changes</h3>
+            <p class="card-sub">Interactive</p>
+          </article>
+
+          <article class="content-card">
+            <span class="card-tag">SIGNAGE</span>
+            <h3>Generate Protest Card</h3>
+            <p class="card-sub">Screenshot ready</p>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="mobile-nav">
+    <button class="active">Home</button>
+    <button>Stats</button>
+    <button>Articles</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
