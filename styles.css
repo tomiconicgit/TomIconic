@@ -1,11 +1,10 @@
 :root {
-  --bg: #0b0b0c;
-  --card: #141416;
+  --bg: #0a0a0a;
+  --panel: rgba(20,20,22,0.7);
   --text: #ffffff;
-  --muted: #9a9a9a;
-  --accent: #3a7afe;
-
-  --radius: 14px;
+  --muted: #9b9b9b;
+  --accent: #ffffff;
+  --radius: 18px;
 }
 
 * {
@@ -14,131 +13,36 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   background: var(--bg);
   color: var(--text);
-}
-
-/* NAV */
-
-.top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 20px;
-  background: rgba(11,11,12,0.85);
-  backdrop-filter: blur(20px);
 }
 
-.logo {
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  font-size: 14px;
+/* SIDE RAIL */
+
+.side-rail {
+  width: 88px;
+  padding: 20px 12px;
+  display: none;
 }
 
-.nav-links button {
+.side-rail nav button {
   background: none;
   border: none;
   color: var(--muted);
-  margin-left: 16px;
-  font-size: 14px;
+  padding: 12px 0;
   cursor: pointer;
+  font-size: 14px;
 }
 
-.nav-links button.active {
+.side-rail nav button.active {
   color: var(--text);
 }
 
-/* PAGES */
-
-.page {
-  display: none;
-  padding: 24px 20px 80px;
+.logo {
+  width: 36px;
+  margin-bottom: 30px;
 }
 
-.page.active {
-  display: block;
-}
-
-.page-title {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.section-title {
-  margin: 40px 0 16px;
-  font-size: 18px;
-}
-
-/* CARDS */
-
-.card-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.card {
-  min-width: 260px;
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px;
-  flex-shrink: 0;
-}
-
-.card h3 {
-  font-size: 14px;
-  color: var(--muted);
-  margin: 0 0 8px;
-}
-
-.card .value {
-  font-size: 36px;
-  font-weight: 600;
-}
-
-.card-grid,
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
-}
-
-.muted {
-  color: var(--muted);
-}
-
-/* STAT CARD */
-
-.stat-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px;
-  position: relative;
-}
-
-.stat-card .label {
-  font-size: 12px;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
-.stat-card .stat-value {
-  font-size: 40px;
-  margin: 8px 0;
-}
-
-.stat-card .context {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.stat-card .timestamp {
-  margin-top: 12px;
-  font-size: 11px;
-  color: var(--muted);
-}
+/
