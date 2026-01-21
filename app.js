@@ -1,42 +1,31 @@
-import { stats } from "./data/stats.js";
+const eventView = document.getElementById("eventView");
 
-const pages = document.querySelectorAll(".page");
-const buttons = document.querySelectorAll("nav button");
+function openEvent(data) {
+  document.getElementById("eventTag").innerText = data.tag;
+  document.getElementById("eventTitle").innerText = data.title;
+  document.getElementById("eventSummary").innerText = data.summary;
 
-buttons.forEach(btn => {
-  btn.onclick = () => {
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+  document.getElementById("statToday").innerText = data.today;
+  document.getElementById("statYear").innerText = data.year;
+  document.getElementById("statChange").innerText = data.change;
 
-    pages.forEach(p =>
-      p.classList.toggle("active", p.id === btn.dataset.page)
-    );
-  };
-});
+  eventView.classList.remove("hidden");
+}
 
-const liveRail = document.getElementById("live-rail");
-const trendingRail = document.getElementById("trending-rail");
-const statsGrid = document.getElementById("stats-grid");
+function closeEvent() {
+  eventView.classList.add("hidden");
+}
 
-stats.forEach(stat => {
-  const tile = document.createElement("div");
-  tile.className = "tile";
-  tile.innerHTML = `
-    <div class="label">${stat.label}</div>
-    <div class="value">${stat.value}</div>
-  `;
-  liveRail.appendChild(tile);
-
-  if (stat.trending) {
-    trendingRail.appendChild(tile.cloneNode(true));
-  }
-
-  const card = document.createElement("div");
-  card.className = "stat-card";
-  card.innerHTML = `
-    <div class="label">${stat.label}</div>
-    <div class="value">${stat.value} ${stat.unit}</div>
-    <div class="muted">${stat.context}</div>
-  `;
-  statsGrid.appendChild(card);
+/* Example hook for cards */
+document.querySelectorAll(".content-card").forEach(card => {
+  card.addEventListener("click", () => {
+    openEvent({
+      tag: "IMMIGRATION",
+      title: "Small Boat Crossings",
+      summary: "Live tracker monitoring daily Channel crossings in 2025.",
+      today: "847",
+      year: "29,403",
+      change: "+14%"
+    });
+  });
 });
