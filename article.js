@@ -1,7 +1,6 @@
 async function loadArticle() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
-
   if (!id) return;
 
   const res = await fetch("/data/articles.json");
@@ -45,7 +44,6 @@ async function loadArticle() {
       const img = document.createElement("img");
       img.src = block.src;
       img.alt = block.caption || "";
-
       body.appendChild(img);
 
       if (block.caption) {
