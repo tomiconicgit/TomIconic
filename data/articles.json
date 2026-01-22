@@ -1,0 +1,29 @@
+[
+  {
+    "id": "small-boats-jan-2026",
+    "headline": "“We will stop the boats”",
+    "subheadline": "Small boat crossings continue to rise despite pledges.",
+    "category": "Britain",
+    "heroLabel": "Breaking",
+    "tags": ["Immigration", "Borders"],
+    "heroImage": "/assets/articles/small-boats/hero.jpg",
+    "cardImage": "/assets/articles/small-boats/card.jpg",
+    "publishDate": "2026-01-21",
+    "showOnHero": true,
+    "blocks": [
+      {
+        "type": "paragraph",
+        "content": "The UK government has repeatedly promised..."
+      },
+      {
+        "type": "highlight",
+        "content": "Crossings increased despite policy pledges."
+      },
+      {
+        "type": "image",
+        "src": "/assets/articles/small-boats/inline-1.jpg",
+        "caption": "Channel crossings, January 2026"
+      }
+    ]
+  }
+]
