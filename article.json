@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Article</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <main class="article-page">
+
+    <!-- HERO -->
+    <section class="article-hero" id="articleHero">
+      <div class="article-hero-overlay"></div>
+      <div class="article-hero-content">
+        <span class="article-label" id="articleLabel"></span>
+        <h1 id="articleTitle"></h1>
+        <p id="articleSub"></p>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <article class="article-body" id="articleBody"></article>
+
+  </main>
+
+  <script src="article.js"></script>
+</body>
+</html>
