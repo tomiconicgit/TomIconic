@@ -90,16 +90,14 @@ body {
   display: flex;
   align-items: flex-end;
   padding: 40px;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.95));
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to top, rgba(0,0,0,0.9), transparent 60%);
-  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 60%);
 }
 
 .hero-content {
@@ -124,32 +122,8 @@ body {
   color: var(--muted);
 }
 
-.hero-actions {
-  margin-top: 22px;
-  display: flex;
-  gap: 14px;
-}
-
-.hero-actions button {
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: none;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.hero-actions .primary {
-  background: var(--text);
-  color: #000;
-}
-
-.hero-actions .secondary {
-  background: rgba(255,255,255,0.15);
-  color: var(--text);
-}
-
 /* =========================
-   RAILS (APPLE TV CORE)
+   RAILS
 ========================= */
 
 .rails {
@@ -165,13 +139,11 @@ body {
   margin-bottom: 14px;
 }
 
-/* Horizontal snapping rail */
 .rail {
   display: flex;
   gap: 18px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   padding-bottom: 10px;
 }
 
@@ -190,45 +162,15 @@ body {
   background: var(--panel);
   backdrop-filter: var(--blur);
   border-radius: var(--radius-lg);
-  padding: 18px;
   position: relative;
   transition: transform 0.25s ease, background 0.25s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .content-card:hover {
   transform: scale(1.04);
   background: var(--panel-hover);
-}
-
-.card-tag {
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-}
-
-.content-card h3 {
-  font-size: 18px;
-  margin: 10px 0 6px;
-}
-
-.card-value {
-  font-size: 34px;
-  font-weight: 600;
-}
-
-.card-sub {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* =========================
-   IMAGE CARDS (STATEMENTS)
-========================= */
-
-.image-card {
-  padding: 0;
-  overflow: hidden;
 }
 
 .image-card img {
@@ -240,12 +182,22 @@ body {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to top, rgba(0,0,0,0.85), transparent 65%);
   padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent 65%);
+}
+
+.card-tag {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.content-card h3 {
+  font-size: 18px;
+  margin: 8px 0 0;
 }
 
 /* =========================
@@ -255,8 +207,7 @@ body {
 .mobile-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   height: 64px;
   background: rgba(10,10,12,0.85);
   backdrop-filter: var(--blur);
@@ -270,32 +221,6 @@ body {
   border: none;
   color: var(--muted);
   font-size: 13px;
-}
-
-.mobile-nav button.active {
-  color: var(--text);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (min-width: 1024px) {
-  .side-nav {
-    display: flex;
-  }
-
-  .mobile-nav {
-    display: none;
-  }
-
-  .hero {
-    padding-left: 80px;
-  }
-
-  .rail-block {
-    padding-left: 80px;
-  }
 }
 
 /* =========================
@@ -318,7 +243,7 @@ body {
 .event-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.85);
   backdrop-filter: blur(30px);
 }
 
@@ -326,23 +251,11 @@ body {
   position: relative;
   width: min(920px, 92vw);
   max-height: 90vh;
-  background: rgba(18, 18, 22, 0.85);
+  background: rgba(18,18,22,0.85);
   backdrop-filter: blur(30px);
   border-radius: 28px;
   padding: 40px;
   overflow-y: auto;
-  animation: slideUp 0.35s ease;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .event-close {
@@ -358,92 +271,21 @@ body {
   cursor: pointer;
 }
 
-.event-header {
-  margin-bottom: 32px;
-}
-
-.event-tag {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-}
-
-.event-header h1 {
-  font-size: clamp(28px, 4vw, 40px);
-  margin: 12px 0;
-}
-
-.event-summary {
-  color: var(--muted);
-  font-size: 16px;
-}
-
 /* =========================
-   EVENT STATS GRID
+   RESPONSIVE
 ========================= */
 
-.event-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-bottom: 28px;
-}
+@media (min-width: 1024px) {
+  .side-nav {
+    display: flex;
+  }
 
-.stat-box {
-  background: rgba(255,255,255,0.06);
-  border-radius: 18px;
-  padding: 18px;
-}
+  .mobile-nav {
+    display: none;
+  }
 
-.stat-label {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.stat-value {
-  font-size: 32px;
-  margin-top: 6px;
-}
-
-.stat-value.negative {
-  color: #ff6b6b;
-}
-
-/* =========================
-   EVENT ACTIONS
-========================= */
-
-.event-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 22px;
-}
-
-.event-actions button {
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-}
-
-.event-actions .primary {
-  background: white;
-  color: black;
-}
-
-.event-actions .secondary {
-  background: rgba(255,255,255,0.15);
-  color: white;
-}
-
-/* =========================
-   EVENT META
-========================= */
-
-.event-meta {
-  font-size: 13px;
-  color: var(--muted);
-  display: flex;
-  gap: 18px;
+  .hero,
+  .rail-block {
+    padding-left: 80px;
+  }
 }
